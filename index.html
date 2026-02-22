@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilian and EMS Observer Release-Ride Along & Safety Briefing</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/fire-icon-16.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container my-4">
+
+    <!-- Top Part: Address + Logo -->
+    <div class="d-flex justify-content-between align-items-start mb-4 flex-wrap">
+        <div class="flex-grow-1">
+            <h5 class="d-none d-md-block mb-0">
+                <div>City of Durham</div>
+                <div>Fire Department</div>
+                <div>2008 East Club Boulevard</div>
+                <div>Durham, NC 27704</div>
+            </h5>
+            <h6 class="d-block d-md-none mb-0">
+                <div>City of Durham</div>
+                <div>Fire Department</div>
+                <div>2008 East Club Boulevard</div>
+                <div>Durham, NC 27704</div>
+            </h6>
+        </div>
+        <div class="ms-3">
+            <img src="assets/DFD_Logo.png" alt="Fire Department Logo" class="img-fluid top-logo">
+        </div>
+    </div>
+
+    <!-- Bold Centered Header -->
+    <div class="text-center fw-bold mb-4">
+        <p class="mb-1">Ride Along Program</p>
+        <p class="mb-0">Assumption of Risk of Injury or Damage ― Waiver & Release of Claims</p>
+    </div>
+
+    <!-- SINGLE FORM -->
+    <form id="myForm" class="p-3 mb-4 shadow-sm rounded" style="background-color: #f8f9fa;">
+
+        <!-- Participant Info -->
+        <div class="row mb-2">
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" id="name" placeholder="Print Full Name" required>
+            </div>
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" id="dob" placeholder="Date of Birth" required>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" id="street" placeholder="Street Address" required>
+            </div>
+            <div class="col-md-3 mb-2">
+                <input type="text" class="form-control" id="citystate" placeholder="City, State" required>
+            </div>
+            <div class="col-md-3 mb-2">
+                <input type="text" class="form-control" id="zip" placeholder="Zip" required>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" id="dlNumber" placeholder="Driver's License #" required>
+            </div>
+            <div class="col-md-2 mb-2">
+                <input type="text" class="form-control" id="dlState" placeholder="State" required>
+            </div>
+            <div class="col-md-4 mb-2">
+                <input type="text" class="form-control" id="emergencyName" placeholder="Emergency Contact Name" required>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" id="emergencyPhone" placeholder="Emergency Contact Phone" required>
+            </div>
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" id="participantSignature" placeholder="Participant Signature" required>
+            </div>
+        </div>
+
+        <!-- Waiver Text -->
+        <p style="text-align: justify;">
+            In order to be allowed to participate in the Fire ride-along program by the City of Durham Fire Department, I assume 
+            all risk of personal injury or death and property damage or loss from whatever causes arising while I am participating 
+            in the program. This includes, but is not limited to, injuries, death, damages, or losses arising from the acts or 
+            omissions of the City of Durham, its employees, appointed or elected officials, representatives, contractors or agents 
+            or the acts or omissions of a third party, while I am participating in the program or while I am on property owned, 
+            leased or otherwise utilized by the City of Durham in preparation for, or in conclusion of, my participation in the 
+            program. I release, forever discharge and covenant not to sue the City of Durham, its employees, appointed or 
+            elected officials, representatives, contractors or agents from any and all liabilities arising out of or related in any way 
+            to my participation in the ride-along program, and I agree to defend, indemnify and save harmless the City of Durham, 
+            its employees, appointed or elected officials, representatives, contractors or agents from any and all liabilities 
+            therefore.
+        </p>
+
+        <p style="text-align: justify;">
+            As further consideration for being allowed to participate in the ride-along program, I agree to defend, indemnify and 
+            hold and save harmless the City of Durham, its employees, appointed or elected officials, representatives, contractors 
+            or agents for any and all personal injury or death and property damage or loss to others for which my actions were a 
+            proximate cause while I am participating in the program. I knowingly assume all responsibility and liability for my own 
+            actions while I am participating in the ride-along program.
+        </p>
+
+        <p style="text-align: justify;">
+            I further understand that permission to participate in the ride-along program may be revoked at any time by decision 
+            of the officer operating the fire vehicle or by any other supervisory or command officer.
+        </p>
+
+        <br>
+
+        <!-- Adult/Guardian Signature + Date -->
+        <div class="row mb-4 align-items-center">
+            <div class="col-md-8 mb-2">
+                <label for="adultSignature" class="form-label"><b><i>Signature of Adult Participant or Parent/Guardian:</i></b></label>
+                <canvas id="adultSignature" class="form-control" style="height: 150px; border: 1px solid #ccc;"></canvas>
+                <button type="button" class="btn btn-sm btn-secondary mt-2" id="clearAdultSignature">Clear</button>
+            </div>
+            <div class="col-md-4 mb-2">
+                <label for="signatureDate" class="form-label"><b><i>Today's Date:</i></b></label>
+                <input type="date" id="signatureDate" class="form-control" required>
+            </div>
+        </div>
+
+        <!-- Note about license -->
+        <div class="text-center fw-bold mb-4">
+            <p><i>Note: You must provide <u>a photocopy</u> of your driver’s license with this form.</i></p>
+        </div>
+
+        <!-- Departmental Use Only -->
+        <div style="height: 3px; background-color: black; width: 100%; margin: 0 auto;"></div>
+        <p class="text-center text-uppercase mt-2">Departmental Use Only</p>
+
+        <div class="mt-4 mb-4 p-3 shadow-sm rounded" style="background-color: #f8f9fa;">
+            <!-- Row 1 -->
+            <div class="row mb-2">
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" id="units" placeholder="Units">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" id="captain" placeholder="Captain">
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="row mb-2">
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" id="battalionChief" placeholder="Battalion Chief">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" id="divisionChief" placeholder="Division Chief">
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="row mb-2">
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" id="dateTimeStart" placeholder="Date / Time Start">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" id="dateTimeEnd" placeholder="Date / Time End">
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center mb-4">
+            <button type="submit" id="submitButton" class="btn mt-2">
+                Submit
+            </button>
+        </div>
+        
+    </form>
+
+    <footer class="text-center text-md-start">
+        Civilian and EMS Observer Release-Ride Along & Safety Briefing Form 2026
+    </footer>
+
+</div>
+
+<!-- Signature Pad CDN -->
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.0/dist/signature_pad.umd.min.js"></script>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

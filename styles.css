@@ -1,0 +1,83 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-weight: 400;
+    font-size: 16px;       
+    line-height: 1.6;       
+    color: #333;          
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+/* Responsive logo max-height */
+.top-logo {
+    max-height: 120px;
+    width: auto;
+}
+
+@media (max-width: 767.98px) {
+    /* For small screens (smaller than md) */
+    .top-logo {
+        max-height: 100px;
+    }
+}
+
+/* Universal input styles */
+input::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; /* base size */
+    color: #666;
+    opacity: 1; /* ensures full color */
+}
+
+/* Small screens - shrinking placeholder text */
+@media (max-width: 768px) {
+    input::placeholder {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    input::placeholder {
+        font-size: 0.75rem;
+    }
+}
+
+/* Making text inside input also responsive */
+input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    input {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    input {
+        font-size: 0.75rem;
+    }
+}
+
+#submitButton {
+    background-color: #0c2d50;
+    color: white;
+    padding: 10px 30px;
+    border: 1px solid #0c2d50;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+#submitButton:hover {
+    background-color: #091f3a; /* darker shade for hover */
+    border-color: #091f3a;
+    color: white;
+}
